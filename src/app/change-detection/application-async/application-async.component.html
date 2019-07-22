@@ -1,0 +1,4 @@
+<p>New Status Every 1 second!</p>
+<span *ngIf="status | async as status">
+  {{ getStatus(status)}}
+</span>
