@@ -2,3 +2,6 @@
 
 <td>{{application.name}}</td>
 <td><app-status-icon [status]="getApplicationStatus()"></app-status-icon></td>
+<button (click)="onStart()">Start</button>
+<button (click)="onPause()">Pause</button>
+<button (click)="onShutDown()">Shut Down</button>

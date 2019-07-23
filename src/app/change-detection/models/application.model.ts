@@ -9,3 +9,8 @@ export enum ApplicationStatus {
 export class Application extends SimpleModel {
   status: ApplicationStatus;
 }
+
+export class ApplicationStatusEvent {
+  id: number;
+  status: ApplicationStatus;
+}

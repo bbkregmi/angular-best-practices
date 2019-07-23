@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Application, ApplicationStatus } from '../../models/application.model';
+import { Application, ApplicationStatus, ApplicationStatusEvent } from '../../models/application.model';
 
 
 
@@ -34,15 +34,11 @@ export class DatacenterComponent {
     console.log('Datacenter view checked');
   }
 
-  onStart(application: Application) {
-    application.status = ApplicationStatus.RUNNING;
-  }
+  onStatusChange(statusChangeEvent: ApplicationStatusEvent) {
+    const index = this.applications.findIndex((app) => {
+      return app.id === statusChangeEvent.id;
+    });
 
-  onPause(application: Application) {
-    application.status = ApplicationStatus.PAUSED;
-  }
-
-  onShutDown(application: Application) {
-    application.status = ApplicationStatus.OFFLINE;
+    this.applications[index].status = statusChangeEvent.status;
   }
 }

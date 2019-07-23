@@ -2,10 +2,7 @@
 <div>
   <p>{{ check() }}</p>
   <div *ngFor="let application of applications; trackBy: application?.id" class="application-table">
-    <app-application [application]="application"></app-application>
-    <button (click)="onStart(application)">Start</button>
-    <button (click)="onPause(application)">Pause</button>
-    <button (click)="onShutDown(application)">Shut Down</button>
+    <app-application [application]="application" (statusChange)="onStatusChange($event)"></app-application>
     <div class="separator"></div>
   </div>
 </div>
