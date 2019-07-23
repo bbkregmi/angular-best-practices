@@ -35,14 +35,23 @@ export class DatacenterComponent {
   }
 
   onStart(application: Application) {
-    application.status = ApplicationStatus.RUNNING;
+    const appIndex = this.getIndex(application);
+    this.applications[appIndex] = {...this.applications[appIndex], status: ApplicationStatus.RUNNING};
   }
 
   onPause(application: Application) {
-    application.status = ApplicationStatus.PAUSED;
+    const appIndex = this.getIndex(application);
+    this.applications[appIndex] = {...this.applications[appIndex], status: ApplicationStatus.PAUSED};
   }
 
   onShutDown(application: Application) {
-    application.status = ApplicationStatus.OFFLINE;
+    const appIndex = this.getIndex(application);
+    this.applications[appIndex] = {...this.applications[appIndex], status: ApplicationStatus.OFFLINE};
+  }
+
+  private getIndex(application: Application): number {
+    return this.applications.findIndex((app) => {
+      return app.id === application.id;
+    });
   }
 }
