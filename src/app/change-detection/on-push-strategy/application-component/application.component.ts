@@ -1,11 +1,10 @@
 import { Input, Component } from '@angular/core';
 import { Application } from '../../models/application.model';
-import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['../../../app.component.css']
 })
 export class ApplicationComponent {
   @Input() application: Application;

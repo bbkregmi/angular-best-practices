@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
 import { Application, ApplicationStatus } from '../../models/application.model';
 
-enum TestType {
-  CHANGE_DETECTION,
-  ASYNC_CHANGE,
-  PIPE_CHANGE,
-  SMART_DUMB_COMPONENT
-};
+
 
 @Component({
   selector: 'app-datacenter',
-  templateUrl: './datacenter.component.html'
+  templateUrl: './datacenter.component.html',
+  styleUrls: ['../../../app.component.css']
 })
 export class DatacenterComponent {
   applications: Array<Application> = [
@@ -32,14 +28,21 @@ export class DatacenterComponent {
   ];
 
   status: ApplicationStatus;
-  testType = TestType.SMART_DUMB_COMPONENT;
-  TestType = TestType;
+
 
   check() {
     console.log('Datacenter view checked');
   }
 
-  changeStatus() {
-    this.applications[0] = {...this.applications[0], status: ApplicationStatus.OFFLINE };
+  onStart(application: Application) {
+    application.status = ApplicationStatus.RUNNING;
+  }
+
+  onPause(application: Application) {
+    application.status = ApplicationStatus.PAUSED;
+  }
+
+  onShutDown(application: Application) {
+    application.status = ApplicationStatus.OFFLINE;
   }
 }

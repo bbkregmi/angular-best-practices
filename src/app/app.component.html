@@ -1,4 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <app-datacenter></app-datacenter>
+    <div *ngIf="testType === TestType.CHANGE_DETECTION">
+        <app-datacenter></app-datacenter>
+    </div>
+
+  <div *ngIf="testType === TestType.ASYNC_CHANGE">
+    <app-async></app-async>
+  </div>
+
+  <div *ngIf="testType === TestType.PIPE_CHANGE">
+    <app-user></app-user>
+  </div>
+
+  <div *ngIf="testType === TestType.SMART_DUMB_COMPONENT">
+    <app-search></app-search>
+  </div>
 </div>

@@ -1,0 +1,18 @@
+td {
+  width: 150px;
+}
+
+button {
+  margin-right: 20px;
+}
+
+.separator {
+  border: 1px solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.application-table {
+  width: 550px;
+  padding: 10px;
+}

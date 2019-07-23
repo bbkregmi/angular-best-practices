@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+enum TestType {
+  CHANGE_DETECTION,
+  ASYNC_CHANGE,
+  PIPE_CHANGE,
+  SMART_DUMB_COMPONENT
+};
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-app';
+  testType = TestType.CHANGE_DETECTION;
+  TestType = TestType;
 }

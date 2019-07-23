@@ -33,7 +33,10 @@ import { SearchResultListComponent } from './application-smart-dumb-component/se
     SearchService,
   ],
   exports: [
-    DatacenterComponent
+    DatacenterComponent,
+    ApplicationAsyncComponent,
+    ResultsComponent,
+    UserComponent
   ]
 })
 export class ChangeDetectionModule {}
