@@ -32,7 +32,7 @@ export class DatacenterComponent {
   ];
 
   status: ApplicationStatus;
-  testType = TestType.SMART_DUMB_COMPONENT;
+  testType = TestType.PIPE_CHANGE;
   TestType = TestType;
 
   check() {

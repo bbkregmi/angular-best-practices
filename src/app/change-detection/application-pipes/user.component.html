@@ -1,4 +1,16 @@
-<p>{{user | fullName}}</p>
-<p>{{organization.name}}</p>
-<button (click)="changeOrganization()">Change organization</button>
-<button (click) = "changeUser()">Change User</button>
+<style>
+  button {
+    margin-right: 10px;
+  }
+
+  div {
+    padding: 20px;
+  }
+</style>
+
+<div>
+    <p>{{getFullName()}}</p>
+    <p>{{user.role}}</p>
+    <button (click)="changeRole()">Make Viewer</button>
+    <button (click)="changeUser()">Change User</button>
+</div>

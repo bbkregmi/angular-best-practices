@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { User } from '../models/user.model';
-import { SimpleModel } from '../models/simple-model.model';
 
 @Component({
     selector: 'app-user',
-    templateUrl: './user.component.html'
+    templateUrl: './user.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent {
 
@@ -15,21 +15,16 @@ export class UserComponent {
     role: 'Admin'
   };
 
-  organization: SimpleModel = {
-    id: 1,
-    name: 'Organization 1'
-  };
-
   getFullName() {
     console.log('Get full name called');
     return `${this.user.firstName} ${this.user.lastName}`;
   }
 
-  changeOrganization() {
-    this.organization.name = 'Organization 2';
+  changeRole() {
+    this.user.role = 'Viewer';
   }
 
   changeUser() {
-    this.user = {...this.user, firstName: 'Mary'};
+    this.user.firstName = 'Mary';
   }
 }

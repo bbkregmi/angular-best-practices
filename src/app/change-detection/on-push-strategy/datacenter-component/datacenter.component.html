@@ -1,5 +1,5 @@
-<h2>Datacenter</h2>
 <div *ngIf="testType === TestType.CHANGE_DETECTION">
+  <h1>Datacenter</h1>
   <p>{{ check() }}</p>
   <div *ngFor="let application of applications; trackBy: application?.id">
     <app-application [application]="application"></app-application>
