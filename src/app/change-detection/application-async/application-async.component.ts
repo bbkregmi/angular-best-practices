@@ -1,23 +1,23 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ApplicationStatus } from '../models/application.model';
 import { ApplicationAsyncService } from './application-async.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-async',
   templateUrl: './application-async.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ApplicationAsyncComponent implements OnInit {
 
-  status: Observable<number>;
+  status: ApplicationStatus;
 
   constructor(
     private applicationAsyncService: ApplicationAsyncService
   ) {}
 
   ngOnInit() {
-    this.status = this.applicationAsyncService.get();
+    this.applicationAsyncService.get().subscribe((status) => {
+      this.status = status;
+    });
   }
 
   getStatus(status: ApplicationStatus) {
