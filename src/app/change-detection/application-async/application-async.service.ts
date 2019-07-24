@@ -1,5 +1,7 @@
-import { Subscription, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ApplicationAsyncService {
 
   private statusChangeSubscription: Subject<number>;

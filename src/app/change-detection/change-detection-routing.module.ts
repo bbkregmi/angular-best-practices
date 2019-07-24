@@ -1,21 +1,19 @@
-import { ApplicationAsyncComponent } from './application-async/application-async.component';
 import { Routes, RouterModule } from '@angular/router';
-import { UserComponent } from './application-pipes/user.component';
 import { NgModule } from '@angular/core';
-import { DatacenterComponent } from './on-push-strategy/datacenter-component/datacenter.component';
 
 const changeDetectionRoutes: Routes = [
   {
     path: 'onpush',
-    component: DatacenterComponent
+    loadChildren: './on-push-strategy/on-push-strategy.module#OnPushModule',
+    data: {preload: true}
   },
   {
     path: 'application-async',
-    component: ApplicationAsyncComponent
+    loadChildren: './application-async/application-async.module#ApplicationAsyncModule'
   },
   {
     path: 'pipes',
-    component: UserComponent
+    loadChildren: './application-pipes/application-pipes.module#ApplicationPipesModule'
   }
 ];
 
