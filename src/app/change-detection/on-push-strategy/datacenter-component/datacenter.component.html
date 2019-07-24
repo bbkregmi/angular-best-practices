@@ -1,20 +1,6 @@
 <h2>Datacenter</h2>
-<div *ngIf="testType === TestType.CHANGE_DETECTION">
-  <p>{{ check() }}</p>
-  <div *ngFor="let application of applications; trackBy: application?.id">
-    <app-application [application]="application"></app-application>
-  </div>
-  <button (click)="changeStatus()">Go Offline</button>
+<p>{{ check() }}</p>
+<div *ngFor="let application of applications; trackBy: trackApplicationsByFn">
+  <app-application [application]="application"></app-application>
 </div>
-
-<div *ngIf="testType === TestType.ASYNC_CHANGE">
-  <app-async></app-async>
-</div>
-
-<div *ngIf="testType === TestType.PIPE_CHANGE">
-  <app-user></app-user>
-</div>
-
-<div *ngIf="testType === TestType.SMART_DUMB_COMPONENT">
-  <app-search></app-search>
-</div>
+<button (click)="changeStatus()">Go Offline</button>

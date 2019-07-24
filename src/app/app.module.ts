@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ChangeDetectionModule } from './change-detection/change-detection.module';
+import { RouterModule, Routes } from '@angular/router';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+
+const appRootRoute: Routes = [
+  {
+    path: '',
+    component: ChangeDetectionComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -10,7 +19,8 @@ import { ChangeDetectionModule } from './change-detection/change-detection.modul
   ],
   imports: [
     BrowserModule,
-    ChangeDetectionModule
+    ChangeDetectionModule,
+    RouterModule.forRoot(appRootRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

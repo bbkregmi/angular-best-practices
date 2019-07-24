@@ -42,4 +42,8 @@ export class DatacenterComponent {
   changeStatus() {
     this.applications[0] = {...this.applications[0], status: ApplicationStatus.OFFLINE };
   }
+
+  trackApplicationsByFn(index: number, application: Application) {
+    return application.id;
+  }
 }
