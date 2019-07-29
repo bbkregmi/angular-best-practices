@@ -1,0 +1,12 @@
+app-navigation {
+  position: fixed;
+  height: 97%;
+  width: 15%;
+  margin-top: 3%;
+}
+
+.content {
+  position: fixed;
+  margin-left: 15%;
+  margin-top: 3%;
+}

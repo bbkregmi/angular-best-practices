@@ -1,0 +1,7 @@
+
+<div class="navigation-panel">
+  <ng-container *ngFor="let navItem of navItems; trackBy: navItemsTrackFn">
+      <app-nav-link [navItem]="navItem" (itemClicked)="onNavItemClicked($event)"></app-nav-link>
+  </ng-container>
+</div>
+

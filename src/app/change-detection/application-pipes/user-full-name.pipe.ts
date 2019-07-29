@@ -3,7 +3,6 @@ import { User } from '../models/user.model';
 
 @Pipe({
   name: 'fullName',
-  pure: false
 })
 export class UserFullName implements PipeTransform {
 

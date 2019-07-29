@@ -1,23 +1,33 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ApplicationStatus } from '../models/application.model';
 import { ApplicationAsyncService } from './application-async.service';
-import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-async',
   templateUrl: './application-async.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ApplicationAsyncComponent implements OnInit {
+export class ApplicationAsyncComponent implements OnInit, OnDestroy {
 
-  status: Observable<number>;
+  status: number;
+  statusSubscription: Subscription;
 
   constructor(
-    private applicationAsyncService: ApplicationAsyncService
+    private applicationAsyncService: ApplicationAsyncService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.status = this.applicationAsyncService.get();
+    this.statusSubscription = this.applicationAsyncService.get().subscribe((status) => {
+      this.status = status;
+      this.cdr.markForCheck();
+    });
+  }
+
+  ngOnDestroy() {
+    this.applicationAsyncService.stop();
+    this.statusSubscription.unsubscribe();
   }
 
   getStatus(status: ApplicationStatus) {

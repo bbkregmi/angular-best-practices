@@ -2,7 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ChangeDetectionModule } from './change-detection/change-detection.module';
+import { NavigationModule } from './navigation/navigation.module';
+import { AppMainModule } from './app-main/app-main.module';
+import { Routes, RouterModule } from '@angular/router';
+import { AppMainComponent } from './app-main/app-main.component';
+
+const appRootRoute: Routes = [
+  {
+    path: '',
+    component: AppMainComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +20,9 @@ import { ChangeDetectionModule } from './change-detection/change-detection.modul
   ],
   imports: [
     BrowserModule,
-    ChangeDetectionModule
+    RouterModule.forRoot(appRootRoute),
+    AppMainModule,
+    NavigationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

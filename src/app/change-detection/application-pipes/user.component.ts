@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { User } from '../models/user.model';
 import { SimpleModel } from '../models/simple-model.model';
 
 @Component({
     selector: 'app-user',
-    templateUrl: './user.component.html'
+    templateUrl: './user.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserComponent {
 

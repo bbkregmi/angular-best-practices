@@ -1,0 +1,11 @@
+
+<h2>OnPush Strategy Implemented</h2>
+<div class="datacenter-container">
+  <ng-container *ngFor="let application of applications; trackBy: application?.id">
+    <app-application-with-on-push [application]="application"></app-application-with-on-push>
+    <button (click)="onStart(application)">Start</button>
+    <button (click)="onPause(application)">Pause</button>
+    <button (click)="onShutDown(application)">Shut Down</button>
+    <div class="separator"></div>
+  </ng-container>
+</div>

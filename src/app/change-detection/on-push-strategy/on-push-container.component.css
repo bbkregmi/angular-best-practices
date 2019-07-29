@@ -1,0 +1,26 @@
+button {
+  display: inline;
+  margin-right: 20px;
+  padding: 0px;
+  background:none;
+  color: rgb(0, 0, 238);
+  border:none;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  display: inline;
+  margin-right: 20px;
+  padding: 0px;
+  background:none;
+  color: rgb(0, 0, 238);
+  border:none;
+  font: inherit;
+  border-bottom:2px solid blue;
+  cursor: pointer;
+}
+
+.on-push-strategy-tab {
+  height: 30px;
+}

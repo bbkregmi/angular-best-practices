@@ -1,12 +1,13 @@
 import { Input, Component, OnChanges, ChangeDetectionStrategy } from '@angular/core';
-import { ApplicationStatus } from '../../models/application.model';
+import { ApplicationStatus } from '../../../models/application.model';
 
 @Component({
-  selector: 'app-status-icon',
-  templateUrl: './status-icon.component.html',
+  selector: 'app-status-on-push-dom',
+  templateUrl: './status-on-push-dom.component.html',
+  styleUrls: ['../on-push-dom.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StatusIconComponent implements OnChanges {
+export class StatusOnPushDomComponent implements OnChanges {
   @Input() status: ApplicationStatus;
 
   statusText: string;

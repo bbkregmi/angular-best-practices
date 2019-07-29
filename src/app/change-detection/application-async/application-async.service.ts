@@ -1,22 +1,32 @@
-import { Subscription, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ApplicationAsyncService {
 
   private statusChangeSubscription: Subject<number>;
   private currentStatus: number;
+  private intervalPromise;
 
   constructor(
 
   ){
-    this.currentStatus = 1;
+    this.currentStatus = 0;
     this.statusChangeSubscription = new Subject();
-    setInterval(() => {
-      this.currentStatus = ((this.currentStatus + 1) % 3) + 1;
-      this.statusChangeSubscription.next(this.currentStatus);
-    }, 1000);
   }
 
   get() {
-    return this.statusChangeSubscription;
+    this.intervalPromise = setInterval(() => {
+      this.currentStatus = ((this.currentStatus) % 3) + 1;
+      this.statusChangeSubscription.next(this.currentStatus);
+    }, 1000);
+
+    return this.statusChangeSubscription.asObservable();
+  }
+
+  stop() {
+    clearInterval(this.intervalPromise);
   }
 }
