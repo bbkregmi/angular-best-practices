@@ -12,10 +12,6 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { CdkStepperModule } from '@angular/cdk/stepper';
-import { ScrollDispatchModule } from '@angular/cdk/scrolling';
-import { PreloadAllModules } from '@angular/router';
-import { PortalModule } from '@angular/cdk/portal';
-
 @NgModule({
   imports: [
     CommonModule,
