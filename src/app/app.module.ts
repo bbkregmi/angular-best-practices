@@ -6,6 +6,7 @@ import { NavigationModule } from './navigation/navigation.module';
 import { AppMainModule } from './app-main/app-main.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AppMainComponent } from './app-main/app-main.component';
+import { StoreModule } from '@ngrx/store';
 
 const appRootRoute: Routes = [
   {
@@ -23,6 +24,7 @@ const appRootRoute: Routes = [
     RouterModule.forRoot(appRootRoute),
     AppMainModule,
     NavigationModule,
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

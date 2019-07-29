@@ -1,7 +1,7 @@
 <h2>Demo Change Detection Triggered Through DOM Event</h2>
 
 <div class="datacenter-container">
-  <ng-container *ngFor="let application of applications; trackBy: application?.id">
+  <ng-container *ngFor="let application of applications; trackBy: trackByFn">
     <app-application-on-push-dom [application]="application" (statusChange)="onStatusChange($event)"></app-application-on-push-dom>
     <div class="separator"></div>
   </ng-container>

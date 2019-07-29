@@ -42,6 +42,10 @@ export class DatacenterWithOnPushComponent implements OnInit {
     this.applications[appIndex] = {...this.applications[appIndex], status: ApplicationStatus.OFFLINE};
   }
 
+  trackByFn(index: number, application: Application) {
+    return application.id;
+  }
+
   private getIndex(application: Application): number {
     return this.applications.findIndex((app) => {
       return app.id === application.id;
