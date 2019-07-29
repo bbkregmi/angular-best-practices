@@ -39,4 +39,8 @@ export class DatacenterWithoutOnPushComponent implements OnInit {
   onShutDown(application: Application) {
     application.status = ApplicationStatus.OFFLINE;
   }
+
+  trackByFn(index: number, application: Application) {
+    return application.id;
+  }
 }

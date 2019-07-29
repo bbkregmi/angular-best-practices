@@ -20,7 +20,7 @@ export class NavigationComponent {
     this.router.navigateByUrl(navItem.link);
   }
 
-  navItemsTrackFun(index: number, navItem: NavItem) {
+  navItemsTrackFn(index: number, navItem: NavItem) {
     return index;
   }
 }

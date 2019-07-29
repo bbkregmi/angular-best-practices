@@ -4,7 +4,17 @@ import { WithoutOnPushModule } from './without-on-push/without-on-push.module';
 import { WithOnPushModule } from './with-on-push/with-on-push.module';
 import { CommonModule } from '@angular/common';
 import { OnPushDomModule } from './with-on-push-dom/on-push-dom.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { PreloadAllModules } from '@angular/router';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
   imports: [
@@ -12,6 +22,19 @@ import { OnPushDomModule } from './with-on-push-dom/on-push-dom.module';
     WithoutOnPushModule,
     WithOnPushModule,
     OnPushDomModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    CdkTableModule,
+    CdkAccordionModule,
+    CdkTreeModule,
+    CdkStepperModule,
   ],
   declarations: [
     OnPushContainerComponent
