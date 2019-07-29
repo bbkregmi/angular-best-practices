@@ -4,18 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserFullName } from './user-full-name.pipe';
 import { UserComponent } from './user.component';
 
-
-const applicationPipeRoutes: Routes = [
-  {
-    path: '',
-    component: UserComponent
-  }
-];
-
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(applicationPipeRoutes),
   ],
   declarations: [
     UserFullName,
@@ -23,7 +14,6 @@ const applicationPipeRoutes: Routes = [
   ],
   exports: [
     UserComponent,
-    RouterModule
   ]
 })
 export class ApplicationPipesModule {}

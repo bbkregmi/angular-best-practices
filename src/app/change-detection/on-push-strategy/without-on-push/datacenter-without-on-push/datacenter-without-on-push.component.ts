@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Application, ApplicationStatus } from '../../../models/application.model';
-import { NUM_APP_TO_DISPLAY } from '../../on-push-config';
+import { NUM_APP_TO_DISPLAY_FOR_ONPUSH } from '../../../../on-push-config';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class DatacenterWithoutOnPushComponent implements OnInit {
 
   ngOnInit() {
     this.applications = [];
-    for (let i = 1; i <= NUM_APP_TO_DISPLAY; i++) {
+    for (let i = 1; i <= NUM_APP_TO_DISPLAY_FOR_ONPUSH; i++) {
       this.applications.push({
         name: `App ${i}`,
         id: i,
