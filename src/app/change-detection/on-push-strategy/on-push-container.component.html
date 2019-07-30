@@ -3,6 +3,7 @@
 <div class="on-push-strategy-tab">
   <button type="button" (click)="switchContainer(OnPushState.SHOW_WITHOUT_ONPUSH)">Show Without OnPush</button>
   <button type="button" (click)="switchContainer(OnPushState.SHOW_WITH_ONPUSH)">Show With OnPush</button>
+  <button type="button" (click)="switchContainer(OnPushState.SHOW_WITH_ONPUSH_DOM)">Show With OnPush DOM Event</button>
 </div>
 
 <div *ngIf="containerState === OnPushState.SHOW_WITHOUT_ONPUSH">

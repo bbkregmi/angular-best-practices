@@ -19,9 +19,5 @@ const applicationAsyncRoute: Routes = [
   declarations: [
     ApplicationAsyncComponent
   ],
-  exports: [
-    ApplicationAsyncComponent,
-    RouterModule
-  ]
 })
 export class ApplicationAsyncModule {}

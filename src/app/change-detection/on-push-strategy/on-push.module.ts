@@ -23,9 +23,6 @@ const onPushRoute: Routes = [
   declarations: [
     OnPushContainerComponent,
     LoadModuleDirective
-  ],
-  exports: [
-    RouterModule
   ]
 })
 export class OnPushModule {}

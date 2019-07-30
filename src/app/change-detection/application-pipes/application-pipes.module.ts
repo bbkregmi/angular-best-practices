@@ -21,9 +21,5 @@ const applicationPipeRoutes: Routes = [
     UserFullName,
     UserComponent
   ],
-  exports: [
-    UserComponent,
-    RouterModule
-  ]
 })
 export class ApplicationPipesModule {}
