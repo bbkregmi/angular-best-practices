@@ -5,7 +5,6 @@ import { StatusWithOnPushComponent } from './status-with-on-push/status-with-on-
 import { ApplicationWithOnPushComponent } from './application-with-on-push/application-with-on-push.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -16,8 +15,10 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     DatacenterWithOnPushComponent,
     StatusWithOnPushComponent
   ],
-  exports: [
+  entryComponents: [
     DatacenterWithOnPushComponent
-  ]
+  ],
 })
-export class WithOnPushModule {}
+export class WithOnPushModule {
+  static rootComponent = DatacenterWithOnPushComponent;
+}

@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "lazyModules": [
+              "src/app/change-detection/on-push-strategy/with-on-push/with-on-push.module"
+            ],
             "outputPath": "dist/test-app",
             "index": "src/index.html",
             "main": "src/main.ts",

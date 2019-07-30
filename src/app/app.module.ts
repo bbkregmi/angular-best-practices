@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactoryLoader, SystemJsNgModuleLoader } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { AppMainModule } from './app-main/app-main.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AppMainComponent } from './app-main/app-main.component';
-import { StoreModule } from '@ngrx/store';
+import { CustomPreloadingStrategy } from './custom-preloading-strategy';
 
 const appRootRoute: Routes = [
   {
@@ -21,12 +21,16 @@ const appRootRoute: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRootRoute),
+    RouterModule.forRoot(appRootRoute, {preloadingStrategy: CustomPreloadingStrategy }),
     AppMainModule,
     NavigationModule,
-    StoreModule.forRoot({})
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NgModuleFactoryLoader,
+      useClass: SystemJsNgModuleLoader
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

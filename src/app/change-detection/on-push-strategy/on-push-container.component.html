@@ -3,16 +3,18 @@
 <div class="on-push-strategy-tab">
   <button type="button" (click)="switchContainer(OnPushState.SHOW_WITHOUT_ONPUSH)">Show Without OnPush</button>
   <button type="button" (click)="switchContainer(OnPushState.SHOW_WITH_ONPUSH)">Show With OnPush</button>
-  <button type="button" (click)="switchContainer(OnPushState.SHOW_WITH_ONPUSH_DOM)">Show OnPush Triggered Through DOM</button>
 </div>
 
 <div *ngIf="containerState === OnPushState.SHOW_WITHOUT_ONPUSH">
   <app-datacenter-without-on-push></app-datacenter-without-on-push>
 </div>
 
-<div *ngIf="containerState === OnPushState.SHOW_WITH_ONPUSH">
-    <app-datacenter-with-on-push></app-datacenter-with-on-push>
-</div>
+
+<ng-container *ngIf="containerState === OnPushState.SHOW_WITH_ONPUSH"
+  appLoadModule="datacenterOnPush">
+</ng-container>
+
+
 
 <div *ngIf="containerState === OnPushState.SHOW_WITH_ONPUSH_DOM">
     <app-datacenter-on-push-dom></app-datacenter-on-push-dom>

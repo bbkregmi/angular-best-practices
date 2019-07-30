@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ApplicationStatus } from '../models/application.model';
 import { ApplicationAsyncService } from './application-async.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-async',
@@ -19,7 +19,8 @@ export class ApplicationAsyncComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.statusSubscription = this.applicationAsyncService.get().subscribe((status) => {
+    this.statusSubscription = this.applicationAsyncService.get()
+    .subscribe((status) => {
       this.status = status;
       this.cdr.markForCheck();
     });

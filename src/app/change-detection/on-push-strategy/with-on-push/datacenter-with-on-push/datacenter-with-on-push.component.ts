@@ -7,6 +7,7 @@ import { NUM_APP_TO_DISPLAY } from '../../on-push-config';
   selector: 'app-datacenter-with-on-push',
   templateUrl: './datacenter-with-on-push.component.html',
   styleUrls: ['../with-on-push.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DatacenterWithOnPushComponent implements OnInit {
   applications: Array<Application>;
