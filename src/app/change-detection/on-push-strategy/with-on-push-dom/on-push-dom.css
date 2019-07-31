@@ -14,5 +14,5 @@ button {
 
 .datacenter-container {
   height: 800px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

@@ -3,9 +3,13 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { enableDebugTools } from '@angular/platform-browser';
+import { environment } from './environments/environment';
+
 
 
 enableProdMode();
+
+
 
 
 platformBrowserDynamic().bootstrapModule(AppModule)

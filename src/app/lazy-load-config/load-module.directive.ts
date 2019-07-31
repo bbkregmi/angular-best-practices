@@ -9,7 +9,8 @@ import {
   NgModuleFactoryLoader,
   Inject,
   NgModuleFactory,
-  Type} from '@angular/core';
+  Type
+} from '@angular/core';
 import { LAZY_MODULES, LAZY_MODULES_MAP } from './lazy-loading-map';
 
 type ModuleWithRoot = Type<any> & {rootComponent: Type<any>};
