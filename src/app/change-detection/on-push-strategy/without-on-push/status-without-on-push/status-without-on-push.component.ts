@@ -1,5 +1,6 @@
 import { Input, Component, OnChanges } from '@angular/core';
 import { ApplicationStatus } from '../../../models/application.model';
+import { SHOW_CONSOLE_LOG } from '../../on-push-config';
 
 @Component({
   selector: 'app-status-without-on-push',
@@ -28,6 +29,8 @@ export class StatusWithoutOnPushComponent implements OnChanges {
   }
 
   check() {
-    console.log('Status icon component checked ' + this.statusText);
+    if (SHOW_CONSOLE_LOG) {
+      console.log('Status icon component checked ' + this.statusText);
+    }
   }
 }

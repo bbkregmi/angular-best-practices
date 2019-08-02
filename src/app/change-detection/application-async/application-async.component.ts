@@ -10,7 +10,7 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class ApplicationAsyncComponent implements OnInit, OnDestroy {
 
-  status: number;
+  status: Observable<number>;
   statusSubscription: Subscription;
 
   constructor(
@@ -19,16 +19,16 @@ export class ApplicationAsyncComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.statusSubscription = this.applicationAsyncService.get()
-    .subscribe((status) => {
-      this.status = status;
-      this.cdr.markForCheck();
-    });
+    this.status = this.applicationAsyncService.get();
+    // .subscribe((status) => {
+    //   this.status = status;
+    //   this.cdr.markForCheck();
+    // });
   }
 
   ngOnDestroy() {
     this.applicationAsyncService.stop();
-    this.statusSubscription.unsubscribe();
+    // this.statusSubscription.unsubscribe();
   }
 
   getStatus(status: ApplicationStatus) {

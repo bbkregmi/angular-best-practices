@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Application, ApplicationStatus } from '../../../models/application.model';
-import { NUM_APP_TO_DISPLAY } from '../../on-push-config';
+import { NUM_APP_TO_DISPLAY, SHOW_CONSOLE_LOG } from '../../on-push-config';
 
 
 @Component({
@@ -24,13 +24,14 @@ export class DatacenterWithOnPushComponent implements OnInit {
   }
 
   check() {
-    console.log('Datacenter view checked');
+    if (SHOW_CONSOLE_LOG) {
+      console.log('Datacenter view checked');
+    }
   }
 
   onStart(application: Application) {
     const appIndex = this.getIndex(application);
-    const newApp = {...this.applications[appIndex], status: ApplicationStatus.RUNNING};
-    this.applications.splice(appIndex, 1, newApp);
+    this.applications[appIndex] =  {...this.applications[appIndex], status: ApplicationStatus.RUNNING};
   }
 
   onPause(application: Application) {

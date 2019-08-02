@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Application, ApplicationStatus } from '../../../models/application.model';
-import { NUM_APP_TO_DISPLAY } from '../../on-push-config';
+import { NUM_APP_TO_DISPLAY, SHOW_CONSOLE_LOG } from '../../on-push-config';
 
 
 @Component({
@@ -22,10 +22,24 @@ export class DatacenterWithoutOnPushComponent implements OnInit {
         status: (i % 3) + 1
       });
     }
+
+    setTimeout(() => {
+      this.applications = [];
+      for (let i = 1; i <= NUM_APP_TO_DISPLAY; i++) {
+        this.applications.push({
+          name: `App ${i}`,
+          id: i,
+          status: (i % 3) + 1
+        });
+      }
+    }, 5000);
   }
 
   check() {
-    console.log('Datacenter view checked');
+    if (SHOW_CONSOLE_LOG) {
+      console.log('Datacenter view checked');
+    }
+
   }
 
   onStart(application: Application) {

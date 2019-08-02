@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Application, ApplicationStatus, ApplicationStatusEvent } from '../../../models/application.model';
-import { NUM_APP_TO_DISPLAY } from '../../on-push-config';
+import { NUM_APP_TO_DISPLAY, SHOW_CONSOLE_LOG } from '../../on-push-config';
 
 
 @Component({
@@ -26,7 +26,10 @@ export class DatacenterOnPushDomComponent implements OnInit {
 
 
   check() {
-    console.log('Datacenter view checked');
+    if (SHOW_CONSOLE_LOG) {
+      console.log('Datacenter view checked');
+    }
+
   }
 
   onStatusChange(statusChangeEvent: ApplicationStatusEvent) {

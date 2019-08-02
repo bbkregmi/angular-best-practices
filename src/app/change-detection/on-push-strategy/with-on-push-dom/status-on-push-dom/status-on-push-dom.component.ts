@@ -1,5 +1,6 @@
 import { Input, Component, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { ApplicationStatus } from '../../../models/application.model';
+import { SHOW_CONSOLE_LOG } from '../../on-push-config';
 
 @Component({
   selector: 'app-status-on-push-dom',
@@ -29,6 +30,8 @@ export class StatusOnPushDomComponent implements OnChanges {
   }
 
   check() {
-    console.log('Status icon component checked ' + this.statusText);
+    if (SHOW_CONSOLE_LOG) {
+      console.log('Status icon component checked ' + this.statusText);
+    }
   }
 }

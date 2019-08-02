@@ -22,9 +22,6 @@ const navigationRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(navigationRoutes)
-  ],
-  exports: [
-    RouterModule
   ]
 })
 export class NavigationRouterModule {};
